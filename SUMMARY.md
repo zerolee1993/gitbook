@@ -5,10 +5,6 @@
 * [规划]()
     * [第 20 周](markdown/plan/2019-20.md)
     
-* [Kubernetes]()
-  
-* [LeetCode]()
-    
 * [MySQL]()
     * [学习笔记]()
         * [基础架构]()
@@ -19,3 +15,6 @@
         * [常用 SQL](markdown/mysql/practice/cheat-sheet.md)
         * [实时连接监控和管理](markdown/mysql/practice/process-manage.md)
 
+* [Kubernetes]()
+  
+* [LeetCode]()
