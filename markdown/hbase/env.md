@@ -107,17 +107,20 @@ cd hadoop-3.1.2/sbin
 
 # 搭建 HBase 环境 
 
-## 1. 下载
+## 1. 下载 HBase
 
 ```shell
-wget http://mirror.bit.edu.cn/apache/hbase/2.2.0/hbase-2.2.0-bin.tar.gz
-tar -zxvf hbase-2.2.0-bin.tar.gz
+wget
+http://mirror.bit.edu.cn/apache/hbase/2.0.5/hbase-2.0.5-bin.tar.gz
+tar -zxvf hbase-2.0.5-bin.tar.gz
 ```
+
+>后期发现：最新的 2.2.0 版本在搭建 phoenix 环境时会遇到问题，故在此建议安装 2.0.5 版本
 
 ## 2. 配置 hbase-env.sh
 
 ```shell
-vi hbase-2.2.0/conf/hbase-env.sh
+vi hbase-2.0.5/conf/hbase-env.sh
 ```
 
 找到文件中如下注释的位置，将 export JAVA_HOME 配置正确，记得确保这条配置不要被注释
@@ -137,7 +140,7 @@ export HBASE_MANAGES_ZK=false
 ## 3. 配置 hbase-site.xml
 
 ```shell
-vi hbase-2.2.0/conf/hbase-site.xml
+vi hbase-2.0.5/conf/hbase-site.xml
 ```
 
 ```xml
@@ -148,7 +151,7 @@ vi hbase-2.2.0/conf/hbase-site.xml
   	</property>
   	<property>
         <name>hbase.tmp.dir</name>
-        <value>/xxx/hbase-2.2.0/data/tmp</value>
+        <value>/xxx/hbase-2.0.5/data/tmp</value>
   	</property>
   	<property>
     		<name>hbase.cluster.distributed</name>
@@ -191,7 +194,7 @@ vi hbase-2.2.0/conf/hbase-site.xml
 ## 4. 启动，关闭
 
 ```shell
-cd hbase-2.2.0/bin
+cd hbase-2.0.5/bin
 ./start-hbase.sh
 ./stop-hbase.sh
 ```
@@ -199,12 +202,14 @@ cd hbase-2.2.0/bin
 ## 5. 进入 Hbase Shell 并查看状态
 
 ```shell
-cd hbase-2.2.0/bin
+cd hbase-2.0.5/bin
 ./hbase shell
 hbase(main):001:0> status
 1 active master, 0 backup masters, 1 servers, 0 dead, 2.0000 average load
 Took 0.4010 seconds
 ```
+
+> 进入 zk 可使用：`./bin/hbase zkcli`
 
 ## 6. 问题处理
 
@@ -236,6 +241,10 @@ ERROR: org.apache.hadoop.hbase.ipc.ServerNotRunningYetException: Server is not r
   - 进入 HBase 目录下的 logs 文件夹下，查看 master.log 相关日志定位问题（出现任何问题先查这个）
   - 如果是配置问题，请在更改配置后，重启前，删除 Zookeeper 指定的 dataDir 目录下的 version-2 文件夹、删除 HBase 指定的 tmp 目录的内容再重启
   - 还是解决不了，则：关闭所有 java 进程、清理 Hadoop tmp 文件下的内容、重新格式化HDFS、清理 HBase tmp 目录的内容、删除 Zookeeper 指定的 dataDir 目录下的 version-2 文件夹、删除 HBase 目录下的 logs 文件夹中的所有日志，重启，并观察master.log
+
+## 7. 访问
+
+- [http://localhost:16010](http://localhost:16010/)
 
 ---
 
