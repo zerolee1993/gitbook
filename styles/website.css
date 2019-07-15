@@ -35,16 +35,6 @@ body {
     border-radius: 9px 0px 0px 9px;
 }
 
-/* header 隐藏 logo */
-.header-inner .logo {
-    float: left;
-    height: 0px;
-    width: 0px;
-    background: url(../assets/images/logo.png);
-    background-size: 0px 0px;
-    background-repeat: no-repeat;
-}
-
 /* 隐藏文章内部右上角导航的标题 */
 .book-anchor-title {
     display:none;
@@ -70,41 +60,25 @@ body {
     display: none;
 }
 
-.btn-info {
-    color: #fff;
-    background-color: #FC4C52;
-    border-color: #FC4C52;
-    padding: 2px 5px 1px 5px;
-    margin: 1px;
-    font-size:12px;
+/* 滚动条样式 */
+::-webkit-scrollbar-track-piece{
+ -webkit-border-radius:0;
 }
-.btn-info:hover,
-.btn-info:focus,
-.btn-info.focus,
-.btn-info:active,
-.btn-info.active,
-.open > .dropdown-toggle.btn-info {
-    color: #fff;
-    background-color: #FC4C52;
-    border-color: #fff;
+::-webkit-scrollbar{
+ width:8px;
+ height:8px;
+}
+::-webkit-scrollbar-thumb{
+ height:50px;
+ background-color:#6b8194;
+ -webkit-border-radius:4px;
+ outline-offset:-2px;
+ border: 2px solid #6b8194;
+}
+::-webkit-scrollbar-thumb:hover{
+ height:50px;
+ background-color:##6b8194;
+ -webkit-border-radius:4px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #F99935;
-    border-color: #F99935;
-    padding: 2px 5px 1px 5px;
-    font-size:12px;
-    margin: 1px;
-}
-.btn-success:hover,
-.btn-success:focus,
-.btn-success.focus,
-.btn-success:active,
-.btn-success.active,
-.open > .dropdown-toggle.btn-success {
-    color: #fff;
-    background-color: #F99935;
-    border-color: #F99935;
-}
 
