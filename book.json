@@ -35,7 +35,8 @@
 
     "pluginsConfig": {
         "sytles": {
-            "theme": "night"
+            "theme": "night",
+            "css": "sytles/website.css"
         },
         "hide-element": {
             "elements": [".gitbook-link"]
