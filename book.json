@@ -1,7 +1,7 @@
 {
-    "title": "Zero Lee's Gitbook",
-    "description": "zerolee's gitbook",
-    "author": "lishaofei",
+    "title": "极客时间付费专栏备份",
+    "description": "极客时间付费专栏备份",
+    "author": "zerolee",
     "output.name": "site",
     "language": "zh-hans",
     "gitbook": "3.2.3",
@@ -10,33 +10,38 @@
         "readme": "README.md"
     },
     "plugins": [
-        "copy-code-button",
         "-lunr", "-search", "search-plus", "search-pro",
+        "-highlight","prism","prism-themes",
         "github",
-        "emphasize",
+        "copy-code-button",
         "splitter",
         "-sharing",
-        "-highlight",
         "tbfed-pagefooter",
         "anchors",
-        "-livereload",
         "simple-page-toc",
-        "prism",
-        "prism-themes",
+        "hide-element",
         "sectionx",
         "back-to-top-button",
+        "page-toc-button",
         "cuav-chapters",
         "heading-anchors",
-        "theme-fexa",
-        "disqus"
+        "fancybox",
+        "popup",
+        "multipart",
+        "book-summary-scroll-position-saver",
+        "todo",
+        "url-embed"
     ],
 
     "pluginsConfig": {
         "sytles": {
-            "website": "styles/website.css"
+            "theme": "night"
+        },
+        "hide-element": {
+            "elements": [".gitbook-link"]
         },
         "fontsettings": {
-            "theme": "white",
+            "theme": "night",
             "family": "sans",
             "size": 1
         },
@@ -46,13 +51,16 @@
         "prism": {
             "css": [
                 "prismjs/themes/prism-okaidia.css"
-            ]
+            ],
+            "lang": {
+                "shell": "bash"
+            }
         },
         "theme-default": {
-            "showLevel": true
+            "showLevel": false
         },
         "tbfed-pagefooter": {
-            "copyright": "Copyright © Zerolee 2019",
+            "copyright": "",
             "modify_label": "修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
@@ -63,13 +71,9 @@
         "sectionx": {
             "tag": "b"
         },
-        "theme-fexa":{
-            "search-placeholder":"输入关键字",
-            "logo":"assets/images/logo.png",
-            "favicon": "assets/images/favicon.ico"
-        },
-        "disqus": {
-            "shortName": "ZeroLee"
+        "page-toc-button": {
+            "maxTocDepth": 2,
+            "minTocSize": 2
         }
     }
 }

@@ -1,8 +1,8 @@
 # Summary
 
-* [介绍](README.md)
-* [Java]()
-    * [JVM](markdown/java/jvm/深入理解 Java 虚拟机.md)
+- [介绍](README.md)
+- [Java]()
+    - [JVM](markdown/java/jvm/深入理解 Java 虚拟机.md)
 
 - [MySQL]()
   - [开发规范]()
@@ -11,6 +11,11 @@
   - [实践积累]()
       - [常用 SQL](markdown/mysql/practice/cheat-sheet.md)
       - [实时连接监控和管理](markdown/mysql/practice/process-manage.md)
-- [Hbase]()
-  - [macOS HBase + Hadoop + Zookeeper 环境搭建](markdown/hbase/env.md)
-
+- [HBase]()
+  - [环境搭建：macOS HBase + Hadoop + Zookeeper ](markdown/hbase/env.md)
+  - [优化策略](markdown/hbase/optimize.md)
+  - [HBase Shell 实操](markdown/hbase/hbase_shell.md)
+  - [协处理器](markdown/hbase/co-processor.md)
+  - [监控](markdown/hbase/monitoring.md)
+  - [容灾与备份](markdown/hbase/backup.md)
+  - [Phoenix：SQL 中间层](markdown/hbase/phoenix.md)
