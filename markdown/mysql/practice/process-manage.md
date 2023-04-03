@@ -31,7 +31,7 @@ SELECT * FROM infomation_scheme.PROCESSLIST
 
 管理员权限可查看全部，其他用户只能查看当前用户的连接
 
-![](/assets/images/markdown/practice/process-manage/1.png)
+![1](assets/1.png)
 
 关于 PROCESSLIST 表的字段说明如下：可参考[官方文档](<https://dev.mysql.com/doc/refman/5.6/en/processlist-table.html>)
 

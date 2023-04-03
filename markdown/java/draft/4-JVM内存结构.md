@@ -8,7 +8,7 @@
 
 运行时数据区
 
-![image-20190612165628256](/Users/lishaofei/Documents/GitHub/zerolee1993/gitbook/markdown/java/draft/assets/image-20190612165628256.png)
+![image-20190612165628256](./assets/image-20190612165628256.png)
 
 - 程序计数器 PC Register
 
