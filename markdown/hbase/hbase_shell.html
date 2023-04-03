@@ -1,0 +1,832 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HBase Shell 实操 · Zero 的私人笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="zerolee">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fancybox/jquery.fancybox.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fancybox/jquery.fancybox-buttons.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="co-processor.md" />
+    
+    
+    <link rel="prev" href="optimize.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../java/jvm/深入理解 Java 虚拟机.md">
+            
+                <span>
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    开发规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../mysql/standard/guide.html">
+            
+                <a href="../mysql/standard/guide.html">
+            
+                    
+                    快速指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../mysql/standard/standard-v1.0.html">
+            
+                <a href="../mysql/standard/standard-v1.0.html">
+            
+                    
+                    基本规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    实践积累
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../mysql/practice/cheat-sheet.html">
+            
+                <a href="../mysql/practice/cheat-sheet.html">
+            
+                    
+                    常用 SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../mysql/practice/process-manage.html">
+            
+                <a href="../mysql/practice/process-manage.html">
+            
+                    
+                    实时连接监控和管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    HBase
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="env.html">
+            
+                <a href="env.html">
+            
+                    
+                    环境搭建：macOS HBase + Hadoop + Zookeeper 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="optimize.html">
+            
+                <a href="optimize.html">
+            
+                    
+                    优化策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="hbase_shell.html">
+            
+                <a href="hbase_shell.html">
+            
+                    
+                    HBase Shell 实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="co-processor.md">
+            
+                <span>
+            
+                    
+                    协处理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="monitoring.md">
+            
+                <span>
+            
+                    
+                    监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="backup.md">
+            
+                <span>
+            
+                    
+                    容灾与备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="phoenix.md">
+            
+                <span>
+            
+                    
+                    Phoenix：SQL 中间层
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >HBase Shell 实操</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <ul>
+<li><p>&#x67E5;&#x770B;&#x8868;&#x76EE;&#x5F55;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:006:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> list
+TABLE
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0150</span> seconds
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code></pre>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x8868;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:007:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> create <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;fileInfo&apos;</span>,<span class="token string">&apos;saveInfo&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">1.3810</span> seconds
+<span class="token operator">=</span><span class="token operator">&gt;</span> Hbase::Table - FileTable
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:008:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> list
+TABLE
+FileTable
+<span class="token number">1</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0120</span> seconds
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;FileTable&quot;</span><span class="token punctuation">]</span>
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:009:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> desc <span class="token string">&apos;FileTable&apos;</span>
+Table FileTable is ENABLED
+FileTable
+COLUMN FAMILIES DESCRIPTION
+<span class="token punctuation">{</span>NAME <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;fileInfo&apos;</span>, BLOOMFILTER <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;ROW&apos;</span>, VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;1&apos;</span>, IN_MEMORY <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;false&apos;</span>, KEEP_DELETED_CELLS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FALSE&apos;</span>, DATA_
+BLOCK_ENCODING <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, TTL <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FOREVER&apos;</span>, COMPRESSION <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, MIN_VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span>, BLOCKCACHE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;true&apos;</span>, BLOCKSIZ
+E <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;65536&apos;</span>, REPLICATION_SCOPE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>NAME <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;saveInfo&apos;</span>, BLOOMFILTER <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;ROW&apos;</span>, VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;1&apos;</span>, IN_MEMORY <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;false&apos;</span>, KEEP_DELETED_CELLS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FALSE&apos;</span>, DATA_
+BLOCK_ENCODING <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, TTL <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FOREVER&apos;</span>, COMPRESSION <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, MIN_VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span>, BLOCKCACHE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;true&apos;</span>, BLOCKSIZ
+E <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;65536&apos;</span>, REPLICATION_SCOPE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">}</span>
+<span class="token number">2</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0350</span> seconds
+</code></pre>
+</li>
+<li><p>&#x589E;&#x52A0;&#x5217;&#x65CF;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:010:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> alter <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;cf&apos;</span>
+Updating all regions with the new schema<span class="token punctuation">..</span>.
+<span class="token number">1</span>/1 regions updated.
+Done.
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">1.9260</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:011:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> desc <span class="token string">&apos;FileTable&apos;</span>
+Table FileTable is ENABLED
+FileTable
+COLUMN FAMILIES DESCRIPTION
+<span class="token punctuation">{</span>NAME <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;cf&apos;</span>, BLOOMFILTER <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;ROW&apos;</span>, VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;1&apos;</span>, IN_MEMORY <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;false&apos;</span>, KEEP_DELETED_CELLS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FALSE&apos;</span>, DATA_BLOCK_
+ENCODING <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, TTL <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FOREVER&apos;</span>, COMPRESSION <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, MIN_VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span>, BLOCKCACHE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;true&apos;</span>, BLOCKSIZE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;
+65536&apos;</span>, REPLICATION_SCOPE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>NAME <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;fileInfo&apos;</span>, BLOOMFILTER <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;ROW&apos;</span>, VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;1&apos;</span>, IN_MEMORY <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;false&apos;</span>, KEEP_DELETED_CELLS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FALSE&apos;</span>, DATA_
+BLOCK_ENCODING <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, TTL <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FOREVER&apos;</span>, COMPRESSION <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, MIN_VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span>, BLOCKCACHE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;true&apos;</span>, BLOCKSIZ
+E <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;65536&apos;</span>, REPLICATION_SCOPE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>NAME <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;saveInfo&apos;</span>, BLOOMFILTER <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;ROW&apos;</span>, VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;1&apos;</span>, IN_MEMORY <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;false&apos;</span>, KEEP_DELETED_CELLS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FALSE&apos;</span>, DATA_
+BLOCK_ENCODING <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, TTL <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FOREVER&apos;</span>, COMPRESSION <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, MIN_VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span>, BLOCKCACHE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;true&apos;</span>, BLOCKSIZ
+E <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;65536&apos;</span>, REPLICATION_SCOPE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">}</span>
+<span class="token number">3</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0180</span> seconds
+</code></pre>
+</li>
+<li><p>&#x5220;&#x9664;&#x5217;&#x65CF;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:013:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> alter <span class="token string">&apos;FileTable&apos;</span>,<span class="token punctuation">{</span>NAME<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&apos;cf&apos;</span>,METHOD<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&apos;delete&apos;</span><span class="token punctuation">}</span>
+Updating all regions with the new schema<span class="token punctuation">..</span>.
+<span class="token number">1</span>/1 regions updated.
+Done.
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">2.1460</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:015:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> desc <span class="token string">&apos;FileTable&apos;</span>
+Table FileTable is ENABLED
+FileTable
+COLUMN FAMILIES DESCRIPTION
+<span class="token punctuation">{</span>NAME <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;fileInfo&apos;</span>, BLOOMFILTER <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;ROW&apos;</span>, VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;1&apos;</span>, IN_MEMORY <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;false&apos;</span>, KEEP_DELETED_CELLS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FALSE&apos;</span>, DATA_
+BLOCK_ENCODING <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, TTL <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FOREVER&apos;</span>, COMPRESSION <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, MIN_VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span>, BLOCKCACHE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;true&apos;</span>, BLOCKSIZ
+E <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;65536&apos;</span>, REPLICATION_SCOPE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>NAME <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;saveInfo&apos;</span>, BLOOMFILTER <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;ROW&apos;</span>, VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;1&apos;</span>, IN_MEMORY <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;false&apos;</span>, KEEP_DELETED_CELLS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FALSE&apos;</span>, DATA_
+BLOCK_ENCODING <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, TTL <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;FOREVER&apos;</span>, COMPRESSION <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;NONE&apos;</span>, MIN_VERSIONS <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span>, BLOCKCACHE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;true&apos;</span>, BLOCKSIZ
+E <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;65536&apos;</span>, REPLICATION_SCOPE <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">}</span>
+<span class="token number">2</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0180</span> seconds
+</code></pre>
+</li>
+<li><p>&#x589E;&#x52A0;&#x4E24;&#x6761;&#x8BB0;&#x5F55;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:016:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>,<span class="token string">&apos;fileInfo:name&apos;</span>,<span class="token string">&apos;file1.txt&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0640</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:017:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>,<span class="token string">&apos;fileInfo:type&apos;</span>,<span class="token string">&apos;txt&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0030</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:018:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>,<span class="token string">&apos;fileInfo:size&apos;</span>,<span class="token string">&apos;1024&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0060</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:019:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>,<span class="token string">&apos;saveInfo:path&apos;</span>,<span class="token string">&apos;/home&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0110</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:020:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>,<span class="token string">&apos;saveInfo:creator&apos;</span>,<span class="token string">&apos;tom&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0030</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:021:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey2&apos;</span>,<span class="token string">&apos;fileInfo:name&apos;</span>,<span class="token string">&apos;file2.txt&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0030</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:022:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey2&apos;</span>,<span class="token string">&apos;fileInfo:type&apos;</span>,<span class="token string">&apos;txt&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0030</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:023:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey2&apos;</span>,<span class="token string">&apos;fileInfo:size&apos;</span>,<span class="token string">&apos;2048&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0030</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:024:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey2&apos;</span>,<span class="token string">&apos;saveInfo:path&apos;</span>,<span class="token string">&apos;/home&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0040</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:025:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> put <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey2&apos;</span>,<span class="token string">&apos;saveInfo:creator&apos;</span>,<span class="token string">&apos;jack&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0040</span> seconds
+</code></pre>
+</li>
+<li><p>&#x67E5;&#x770B;&#x8868;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x6761;&#x6570;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:026:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> count <span class="token string">&apos;FileTable&apos;</span>
+<span class="token number">2</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0240</span> seconds
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">2</span>
+</code></pre>
+</li>
+<li><p>&#x67E5;&#x770B;&#x4E00;&#x884C;&#x6570;&#x636E;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:027:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> get <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>
+COLUMN                         CELL
+ fileInfo:name                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049913828</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>file1.txt
+ fileInfo:size                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049931731</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token number">1024</span>
+ fileInfo:type                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049924426</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>txt
+ saveInfo:creator              <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049958992</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>tom
+ saveInfo:path                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049946815</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>/home
+<span class="token number">1</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0170</span> seconds
+</code></pre>
+</li>
+<li><p>&#x67E5;&#x770B;&#x4E00;&#x884C;&#x6307;&#x5B9A;&#x5217;&#x65CF;&#x6570;&#x636E;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:028:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span>  get <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>,<span class="token string">&apos;fileInfo&apos;</span>
+COLUMN                         CELL
+ fileInfo:name                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049913828</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>file1.txt
+ fileInfo:size                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049931731</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token number">1024</span>
+ fileInfo:type                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049924426</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>txt
+<span class="token number">1</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0170</span> seconds
+</code></pre>
+</li>
+<li><p>&#x67E5;&#x8BE2;&#x8868;&#x4E2D;&#x6570;&#x636E;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:001:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> scan <span class="token string">&apos;FileTable&apos;</span>
+ROW                            COLUMN+CELL
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:name, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049913828</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>file1.txt
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:size, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049931731</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token number">1024</span>
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:type, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049924426</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>txt
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>saveInfo:creator, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049958992</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>tom
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>saveInfo:path, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049946815</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>/home
+ rowkey2                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:name, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049974675</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>file2.txt
+ rowkey2                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:size, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049998454</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token number">2048</span>
+ rowkey2                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:type, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049983426</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>txt
+ rowkey2                       <span class="token assign-left variable">column</span><span class="token operator">=</span>saveInfo:creator, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562050020654</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>jack
+ rowkey2                       <span class="token assign-left variable">column</span><span class="token operator">=</span>saveInfo:path, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562050007276</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>/home
+<span class="token number">2</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.1720</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:002:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> scan <span class="token string">&apos;FileTable&apos;</span>,<span class="token punctuation">{</span>COLUMN<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&apos;fileInfo:name&apos;</span><span class="token punctuation">}</span>
+ROW                            COLUMN+CELL
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:name, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049913828</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>file1.txt
+ rowkey2                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:name, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049974675</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>file2.txt
+<span class="token number">2</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0130</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:004:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> scan <span class="token string">&apos;FileTable&apos;</span>,<span class="token punctuation">{</span>STARTROW<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&apos;rowkey1&apos;</span>,LIMIT<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token number">1</span>,VERSIONS<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token number">1</span><span class="token punctuation">}</span>
+ROW                            COLUMN+CELL
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:name, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049913828</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>file1.txt
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:size, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049931731</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span><span class="token number">1024</span>
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>fileInfo:type, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049924426</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>txt
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>saveInfo:creator, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049958992</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>tom
+ rowkey1                       <span class="token assign-left variable">column</span><span class="token operator">=</span>saveInfo:path, <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049946815</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>/home
+<span class="token number">1</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0100</span> seconds
+</code></pre>
+</li>
+<li><p>&#x5220;&#x9664;&#x4E00;&#x5217;&#x6570;&#x636E;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:005:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> delete <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>,<span class="token string">&apos;fileInfo:size&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0450</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:006:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> get <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>
+COLUMN                         CELL
+ fileInfo:name                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049913828</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>file1.txt
+ fileInfo:type                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049924426</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>txt
+ saveInfo:creator              <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049958992</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>tom
+ saveInfo:path                 <span class="token assign-left variable">timestamp</span><span class="token operator">=</span><span class="token number">1562049946815</span>, <span class="token assign-left variable">value</span><span class="token operator">=</span>/home
+<span class="token number">1</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0360</span> seconds
+</code></pre>
+</li>
+<li><p>&#x5220;&#x9664;&#x4E00;&#x884C;&#x6570;&#x636E;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:007:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> deleteall <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0030</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:008:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> get <span class="token string">&apos;FileTable&apos;</span>,<span class="token string">&apos;rowkey1&apos;</span>
+COLUMN                         CELL
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0020</span> seconds
+</code></pre>
+</li>
+<li><p>&#x5220;&#x9664;&#x8868;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x7981;&#x7528;</p>
+<pre class="language-"><code class="lang-shell">hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:009:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> disable <span class="token string">&apos;FileTable&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">2.3310</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:010:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> is_enabled <span class="token string">&apos;FileTable&apos;</span>
+<span class="token boolean">false</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0050</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:012:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> is_disabled <span class="token string">&apos;FileTable&apos;</span>
+<span class="token boolean">true</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0050</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:013:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> drop <span class="token string">&apos;FileTable&apos;</span>
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">1.2600</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:015:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> exists <span class="token string">&apos;FileTable&apos;</span>
+Table FileTable does not exist
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0040</span> seconds
+
+hbase<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:017:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> list
+TABLE
+<span class="token number">0</span> row<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token number">0.0170</span> seconds
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code></pre>
+</li>
+</ul>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2023-04-03 14:53:25
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="optimize.html" class="navigation navigation-prev " aria-label="Previous page: 优化策略">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="co-processor.md" class="navigation navigation-next " aria-label="Next page: 协处理器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HBase Shell 实操","level":"1.4.3","depth":2,"next":{"title":"协处理器","level":"1.4.4","depth":2,"path":"markdown/hbase/co-processor.md","ref":"markdown/hbase/co-processor.md","articles":[]},"previous":{"title":"优化策略","level":"1.4.2","depth":2,"path":"markdown/hbase/optimize.md","ref":"markdown/hbase/optimize.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","search-pro","-highlight","prism","prism-themes","github","copy-code-button","splitter","-sharing","tbfed-pagefooter","anchors","simple-page-toc","hide-element","sectionx","back-to-top-button","page-toc-button","cuav-chapters","heading-anchors","fancybox","popup","multipart","book-summary-scroll-position-saver","todo","url-embed","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"],"lang":{"shell":"bash"}},"fancybox":{"helpers":{"buttons":{}}},"github":{"url":"https://github.com/zerolee1993"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"sytles":{"theme":"night","css":"sytles/website.css"},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"popup":{},"multipart":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"night","family":"sans","size":1},"sectionx":{"tag":"b"},"heading-anchors":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"prism-themes":{},"copy-code-button":{},"url-embed":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zerolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zero 的私人笔记","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"Zero 的私人笔记"},"file":{"path":"markdown/hbase/hbase_shell.md","mtime":"2023-04-03T06:53:25.017Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-03T07:16:10.894Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/jquery.mousewheel.pack.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/jquery.fancybox.pack.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/jquery.fancybox-buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

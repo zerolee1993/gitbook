@@ -1,0 +1,714 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>优化策略 · Zero 的私人笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="zerolee">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fancybox/jquery.fancybox.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fancybox/jquery.fancybox-buttons.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="hbase_shell.html" />
+    
+    
+    <link rel="prev" href="env.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../java/jvm/深入理解 Java 虚拟机.md">
+            
+                <span>
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    开发规范
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../mysql/standard/guide.html">
+            
+                <a href="../mysql/standard/guide.html">
+            
+                    
+                    快速指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../mysql/standard/standard-v1.0.html">
+            
+                <a href="../mysql/standard/standard-v1.0.html">
+            
+                    
+                    基本规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    实践积累
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../mysql/practice/cheat-sheet.html">
+            
+                <a href="../mysql/practice/cheat-sheet.html">
+            
+                    
+                    常用 SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../mysql/practice/process-manage.html">
+            
+                <a href="../mysql/practice/process-manage.html">
+            
+                    
+                    实时连接监控和管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    HBase
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="env.html">
+            
+                <a href="env.html">
+            
+                    
+                    环境搭建：macOS HBase + Hadoop + Zookeeper 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="optimize.html">
+            
+                <a href="optimize.html">
+            
+                    
+                    优化策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="hbase_shell.html">
+            
+                <a href="hbase_shell.html">
+            
+                    
+                    HBase Shell 实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="co-processor.md">
+            
+                <span>
+            
+                    
+                    协处理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="monitoring.md">
+            
+                <span>
+            
+                    
+                    监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="backup.md">
+            
+                <span>
+            
+                    
+                    容灾与备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="phoenix.md">
+            
+                <span>
+            
+                    
+                    Phoenix：SQL 中间层
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >优化策略</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="hbase-&#x4F18;&#x5316;&#x7B56;&#x7565;"><a name="hbase-&#x4F18;&#x5316;&#x7B56;&#x7565;" class="plugin-anchor" href="#hbase-&#x4F18;&#x5316;&#x7B56;&#x7565;"><i class="fa fa-link" aria-hidden="true"></i></a>HBase &#x4F18;&#x5316;&#x7B56;&#x7565;</h1>
+<h2 id="&#x4EC0;&#x4E48;&#x5BFC;&#x81F4;-hbase-&#x6027;&#x80FD;&#x4E0B;&#x964D;"><a name="&#x4EC0;&#x4E48;&#x5BFC;&#x81F4;-hbase-&#x6027;&#x80FD;&#x4E0B;&#x964D;" class="plugin-anchor" href="#&#x4EC0;&#x4E48;&#x5BFC;&#x81F4;-hbase-&#x6027;&#x80FD;&#x4E0B;&#x964D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x5BFC;&#x81F4; HBase &#x6027;&#x80FD;&#x4E0B;&#x964D;</h2>
+<ul>
+<li>JVM &#x5185;&#x5B58;&#x5206;&#x914D;&#x53CA; GC &#x56DE;&#x6536;&#x7B56;&#x7565;</li>
+<li>&#x4E0E; HBase &#x8FD0;&#x884C;&#x673A;&#x5236;&#x76F8;&#x5173;&#x7684;&#x90E8;&#x5206;&#x914D;&#x7F6E;&#x4E0D;&#x5408;&#x7406;</li>
+<li>&#x8868;&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;&#x53CA;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x4E0D;&#x5408;&#x7406;</li>
+</ul>
+<h2 id="hbase-&#x6982;&#x5FF5;"><a name="hbase-&#x6982;&#x5FF5;" class="plugin-anchor" href="#hbase-&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>HBase &#x6982;&#x5FF5;</h2>
+<ul>
+<li><p>HBase &#x5199;&#x5165;&#x65F6;&#xFF0C;MemStore &#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x4F1A; flush &#x5230; HFile</p>
+</li>
+<li><p>HFile &#x5C0F;&#x6587;&#x4EF6;&#x592A;&#x591A;&#x65F6;&#x4F1A;&#x6267;&#x884C; compact &#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x5408;&#x5E76;</p>
+<ul>
+<li><p>minor compaction &#x9009;&#x53D6;&#x5C0F;&#x7684;&#x3001;&#x76F8;&#x90BB;&#x7684; StoreFile &#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x5927;&#x7684; StoreFile</p>
+</li>
+<li><p>major compaction &#x5C06;&#x6240;&#x6709; StoreFile &#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A; StoreFile&#xFF0C;&#x6E05;&#x7406;&#x5931;&#x6548;&#x6570;&#x636E;(&#x88AB;&#x5220;&#x9664;&#x7684;&#x6570;&#x636E;&#x3001;TTL &#x8FC7;&#x671F;&#x6570;&#x636E;&#x3001;&#x7248;&#x672C;&#x53F7;&#x8D85;&#x8FC7;&#x8BBE;&#x5B9A;&#x9608;&#x503C;&#x7684;&#x6570;&#x636E;)</p>
+</li>
+<li><p>Compact &#x4F55;&#x65F6;&#x8FDB;&#x884C;</p>
+<ul>
+<li>MemStore flush &#x5230; HFile &#x65F6;</li>
+<li><p>&#x7528;&#x6237;&#x6267;&#x884C; shell &#x547D;&#x4EE4; compact&#x3001;major_compact &#x6216;&#x8C03;&#x7528;&#x76F8;&#x5173; API &#x65F6;</p>
+</li>
+<li><p>HBase &#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x5468;&#x671F;&#x6027;&#x89E6;&#x53D1;&#x68C0;&#x67E5;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x5F53; Region &#x7684;&#x5927;&#x5C0F;&#x8FBE;&#x5230;&#x67D0;&#x4E00;&#x9608;&#x503C;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x6267;&#x884C; split &#x64CD;&#x4F5C;&#xFF0C;&#x5207;&#x5206;&#x6210;&#x4E24;&#x4E2A; Region</p>
+</li>
+</ul>
+<h2 id="&#x670D;&#x52A1;&#x7AEF;&#x914D;&#x7F6E;&#x4F18;&#x5316;"><a name="&#x670D;&#x52A1;&#x7AEF;&#x914D;&#x7F6E;&#x4F18;&#x5316;" class="plugin-anchor" href="#&#x670D;&#x52A1;&#x7AEF;&#x914D;&#x7F6E;&#x4F18;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x670D;&#x52A1;&#x7AEF;&#x914D;&#x7F6E;&#x4F18;&#x5316;</h2>
+<ul>
+<li><p>JVM &#x8BBE;&#x7F6E;&#x4E0E; GC &#x8BBE;&#x7F6E;</p>
+</li>
+<li><p>&#x5C3D;&#x91CF;&#x5C06; RegionServer &#x5185;&#x5B58;&#x5212;&#x5206;&#x5927;&#x4E00;&#x4E9B;&#xFF0C;&#x907F;&#x514D;&#x9891;&#x7E41; FullGC</p>
+</li>
+<li><p>hbase-site.xml &#x5C5E;&#x6027;&#x914D;&#x7F6E;</p>
+<ul>
+<li><code>hbase.regionserver.handler.count</code> rpc &#x8BF7;&#x6C42;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 10&#xFF0C;&#x63D0;&#x5347;&#x6B64;&#x914D;&#x7F6E;&#xFF0C;&#x6709;&#x5229;&#x4E8E; RegionServer &#x63A5;&#x53D7;&#x66F4;&#x591A;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x4F46;&#x8BBE;&#x7F6E;&#x8FC7;&#x591A;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5185;&#x5B58;&#x5360;&#x7528;&#x5927;&#xFF0C;&#x9891;&#x7E41; FullGC&#xFF0C;&#x751A;&#x81F3;&#x51FA;&#x73B0;&#x5185;&#x5B58;&#x6EA2;&#x51FA;</li>
+<li><code>hbase.hregion.max.filesize</code> &#x5F53; region &#x7684;&#x5927;&#x5C0F;&#x5927;&#x4E8E;&#x8BBE;&#x5B9A;&#x503C;&#x540E;&#xFF0C;hbase &#x5C31;&#x4F1A;&#x5F00;&#x59CB; split&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;10G&#xFF0C;&#x53EF;&#x6839;&#x636E;&#x5B58;&#x50A8;&#x5185;&#x5BB9;&#x9002;&#x5F53;&#x8C03;&#x6574;</li>
+<li><code>hbase.hregion.majorcompaction</code> major compaction &#x7684;&#x6267;&#x884C;&#x5468;&#x671F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; 1 &#x5929;&#xFF0C;&#x5EFA;&#x8BAE;&#x8BBE;&#x7F6E;&#x4E3A; 0&#xFF0C;&#x7981;&#x6B62;&#x81EA;&#x52A8;&#x6267;&#x884C;&#xFF0C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4F4E;&#x5CF0;&#x671F;&#x624B;&#x52A8;&#x6267;&#x884C;&#x6216;&#x811A;&#x672C;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x6B63;&#x5E38;&#x4E1A;&#x52A1;</li>
+<li><code>hbase.hstore.compaction.min</code> &#x4E00;&#x4E2A; store &#x4E2D;&#x7684; StoreFile &#x603B;&#x6570;&#x8D85;&#x8FC7;&#x6B64;&#x503C;&#xFF0C;&#x5219;&#x89E6;&#x53D1;&#x9ED8;&#x8BA4;&#x7684; compact &#x64CD;&#x4F5C;&#xFF0C;&#x9ED8;&#x8BA4; 3</li>
+<li><code>hbase.hstore.compaction.max</code> &#x4E00;&#x6B21;&#x6700;&#x591A;&#x5408;&#x5E76;&#x591A;&#x5C11;&#x4E2A; StoreFile&#xFF0C;&#x5982;&#x679C; StoreFile &#x8F83;&#x5927;&#xFF0C;&#x5E94;&#x8BE5;&#x9002;&#x5F53;&#x51CF;&#x5C0F;&#x6B64;&#x503C;&#xFF0C;&#x907F;&#x514D;&#x5408;&#x5E76;&#x65F6;&#x5185;&#x5B58;&#x6EA2;&#x51FA;</li>
+<li><code>hbase.hstore.blockingStoreFiles</code> &#x4E00;&#x4E2A; Region &#x4E2D;&#x7684; Store &#x5185;&#x8D85;&#x8FC7; xx &#x4E2A; StoreFile &#x65F6;&#xFF0C;&#x5219; block &#x6240;&#x6709;&#x7684;&#x5199;&#x8BF7;&#x6C42;&#x8FDB;&#x884C; compact</li>
+<li><code>hfile.block.cache.size</code> RegionServer &#x7684; block cache &#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x9650;&#x5236;</li>
+<li><code>hbase.hregion.memstore.flush.size</code> memstore &#x8D85;&#x8FC7;&#x6B64;&#x503C;&#x4F1A;&#x88AB; flush</li>
+<li><code>hbase.hregion.memstore.block.multiplier</code> &#x5982;&#x679C; memstore &#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x8D85;&#x8FC7; flush.size * multiplier &#x7684;&#x503C;&#xFF0C;&#x4F1A; block &#x8BE5; memstore &#x7684;&#x5199;&#x64CD;&#x4F5C;</li>
+</ul>
+<blockquote>
+<p>&#x603B;&#x4F53;&#x7B56;&#x7565;&#xFF1A;&#x907F;&#x514D;&#x81EA;&#x52A8;&#x7684; major compaction &#x548C; split &#x64CD;&#x4F5C;&#xFF0C;&#x901A;&#x8FC7;&#x5F00;&#x53D1;&#x811A;&#x672C;&#x5728;&#x4E1A;&#x52A1;&#x4F4E;&#x5CF0;&#x65F6;&#x8FDB;&#x884C;&#x624B;&#x52A8;&#x89E6;&#x53D1;</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="&#x5E38;&#x7528;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x5EFA;&#x8868;&#x3001;rowkey-&#x8BBE;&#x8BA1;&#x7B49;"><a name="&#x5E38;&#x7528;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x5EFA;&#x8868;&#x3001;rowkey-&#x8BBE;&#x8BA1;&#x7B49;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x5EFA;&#x8868;&#x3001;rowkey-&#x8BBE;&#x8BA1;&#x7B49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x4F18;&#x5316;&#x7B56;&#x7565;(&#x5EFA;&#x8868;&#x3001;RowKey &#x8BBE;&#x8BA1;&#x7B49;)</h2>
+<ul>
+<li>&#x9884;&#x5148;&#x5206;&#x533A;<ul>
+<li>&#x521B;&#x5EFA; HBase &#x8868;&#x65F6;&#x9ED8;&#x8BA4;&#x5728;&#x4E00;&#x4E2A; RegionServer &#x4E0A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Region&#xFF0C;&#x5199;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5BFC;&#x81F4;&#x8BE5; Region &#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x5927;&#x5C0F;&#x662F;&#xFF0C;&#x8FDB;&#x884C; split &#x64CD;&#x4F5C;&#xFF0C;&#x5206;&#x4E3A;&#x8FDE;&#x4E2A; Region&#xFF0C;&#x8FDB;&#x884C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF0C;split &#x5341;&#x5206;&#x8017;&#x65F6;&#xFF0C;&#x4E14;&#x4F1A;&#x9020;&#x6210; Region &#x65E0;&#x6CD5;&#x8BBF;&#x95EE;</li>
+<li>&#x521B;&#x5EFA; HBase &#x8868;&#x65F6;&#x9884;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E9B;&#x7A7A;&#x7684; Regions&#xFF0C;&#x5E76;&#x4E14;&#x89C4;&#x5B9A;&#x6BCF;&#x4E2A; Region &#x5B58;&#x50A8;&#x7684; RowKey &#x7684;&#x8303;&#x56F4;</li>
+<li>&#x901A;&#x8FC7;&#x9884;&#x5148;&#x5206;&#x533A;&#x8FD8;&#x53EF;&#x89E3;&#x51B3;&#x6570;&#x636E;&#x503E;&#x659C;&#x7684;&#x95EE;&#x9898;</li>
+</ul>
+</li>
+<li>RowKey &#x4F18;&#x5316;<ul>
+<li>&#x5229;&#x7528; HBase &#x9ED8;&#x8BA4;&#x6392;&#x5E8F;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x5C06;&#x4E00;&#x8D77;&#x8BBF;&#x95EE;&#x7684;&#x6570;&#x636E;&#x653E;&#x5230;&#x4E00;&#x8D77;</li>
+<li>&#x9632;&#x6B62;&#x70ED;&#x70B9;&#x95EE;&#x9898;&#xFF0C;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x65F6;&#x5E8F;&#x6216;&#x5355;&#x8C03;&#x7684;&#x9012;&#x589E;&#x9012;&#x51CF;</li>
+</ul>
+</li>
+<li>Column &#x4F18;&#x5316;<ul>
+<li>&#x5217;&#x65CF;&#x7684;&#x540D;&#x79F0;&#x548C;&#x5217;&#x7684;&#x63CF;&#x8FF0;&#x540D;&#x79F0;&#x5C3D;&#x91CF;&#x7B80;&#x77ED;</li>
+<li>&#x540C;&#x4E00;&#x5F20;&#x8868;&#x7684; ColumnFamily &#x4E0D;&#x8981;&#x8D85;&#x8FC7; 3 &#x4E2A;</li>
+</ul>
+</li>
+<li>Schema &#x4F18;&#x5316;<ul>
+<li>&#x5BBD;&#x8868;&#xFF1A;&#x5217;&#x591A;&#x884C;&#x5C11;</li>
+<li>&#x9AD8;&#x8868;&#xFF1A;&#x5217;&#x5C11;&#x884C;&#x591A;</li>
+</ul>
+</li>
+</ul>
+<h2 id="hbase-&#x8BFB;&#x5199;&#x6027;&#x80FD;&#x4F18;&#x5316;java-api-&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;"><a name="hbase-&#x8BFB;&#x5199;&#x6027;&#x80FD;&#x4F18;&#x5316;java-api-&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;" class="plugin-anchor" href="#hbase-&#x8BFB;&#x5199;&#x6027;&#x80FD;&#x4F18;&#x5316;java-api-&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>HBase &#x8BFB;&#x5199;&#x6027;&#x80FD;&#x4F18;&#x5316;(Java API &#x5F00;&#x53D1;&#x8FC7;&#x7A0B;)</h2>
+<ul>
+<li><p>&#x5199;&#x4F18;&#x5316;&#x7B56;&#x7565;</p>
+<ul>
+<li>&#x540C;&#x6B65;&#x6279;&#x91CF;&#x63D0;&#x4EA4; or &#x5F02;&#x6B65;&#x6279;&#x91CF;&#x63D0;&#x4EA4;&#xFF0C;&#x5F02;&#x6B65;&#x53EF;&#x80FD;&#x4F1A;&#x4E22;&#x5931;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x4E1A;&#x52A1;&#x5141;&#x8BB8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F00;&#x542F;&#x5F02;&#x6B65;&#x63D0;&#x4EA4;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;</li>
+<li>&#x5173;&#x95ED; WAL &#x6216;&#x91C7;&#x7528;&#x5F02;&#x6B65; WAL&#xFF0C;&#x635F;&#x5931;&#x6570;&#x636E;&#x5B8C;&#x6574;&#x6027;&#xFF0C;&#x63D0;&#x9AD8;&#x541E;&#x5410;&#x91CF;</li>
+</ul>
+</li>
+<li><p>&#x8BFB;&#x4F18;&#x5316;&#x7B56;&#x7565;</p>
+<ul>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;Scan &#x7F13;&#x5B58;&#x8BBE;&#x7F6E;&#xFF0C;&#x6279;&#x91CF;&#x83B7;&#x53D6;</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#xFF1A;BlockCache &#x914D;&#x7F6E;&#x662F;&#x5426;&#x5408;&#x7406;&#xFF0C;HFile &#x662F;&#x5426;&#x8FC7;&#x591A;</li>
+<li>&#x8868;&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;&#x95EE;&#x9898; </li>
+</ul>
+</li>
+</ul>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2023-04-03 14:53:25
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="env.html" class="navigation navigation-prev " aria-label="Previous page: 环境搭建：macOS HBase + Hadoop + Zookeeper ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="hbase_shell.html" class="navigation navigation-next " aria-label="Next page: HBase Shell 实操">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"优化策略","level":"1.4.2","depth":2,"next":{"title":"HBase Shell 实操","level":"1.4.3","depth":2,"path":"markdown/hbase/hbase_shell.md","ref":"markdown/hbase/hbase_shell.md","articles":[]},"previous":{"title":"环境搭建：macOS HBase + Hadoop + Zookeeper ","level":"1.4.1","depth":2,"path":"markdown/hbase/env.md","ref":"markdown/hbase/env.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","search-pro","-highlight","prism","prism-themes","github","copy-code-button","splitter","-sharing","tbfed-pagefooter","anchors","simple-page-toc","hide-element","sectionx","back-to-top-button","page-toc-button","cuav-chapters","heading-anchors","fancybox","popup","multipart","book-summary-scroll-position-saver","todo","url-embed","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"],"lang":{"shell":"bash"}},"fancybox":{"helpers":{"buttons":{}}},"github":{"url":"https://github.com/zerolee1993"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"sytles":{"theme":"night","css":"sytles/website.css"},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"popup":{},"multipart":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"night","family":"sans","size":1},"sectionx":{"tag":"b"},"heading-anchors":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"prism-themes":{},"copy-code-button":{},"url-embed":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zerolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zero 的私人笔记","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"Zero 的私人笔记"},"file":{"path":"markdown/hbase/optimize.md","mtime":"2023-04-03T06:53:25.018Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-03T07:16:10.894Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-cuav-chapters/cuav-chapters.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/jquery.mousewheel.pack.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/jquery.fancybox.pack.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/jquery.fancybox-buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fancybox/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
