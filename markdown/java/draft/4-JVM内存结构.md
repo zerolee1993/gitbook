@@ -12,8 +12,8 @@
 
 - 程序计数器 PC Register
 
-  ![image-20190612165819186](/Users/lishaofei/Documents/GitHub/zerolee1993/gitbook/markdown/java/draft/assets/image-20190612165819186.png)
+  ![image-20190612165819186](./assets/image-20190612165819186.png)
 
-![image-20190612165827269](/Users/lishaofei/Documents/GitHub/zerolee1993/gitbook/markdown/java/draft/assets/image-20190612165827269.png)
+![image-20190612165827269](./assets/image-20190612165827269.png)
 
-![image-20190612165909970](/Users/lishaofei/Documents/GitHub/zerolee1993/gitbook/markdown/java/draft/assets/image-20190612165909970.png)
+![image-20190612165909970](./assets/image-20190612165909970.png)
