@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>快速指引 · 极客时间付费专栏备份</title>
+        <title>快速指引 · Zero 的私人笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -164,9 +164,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../../java/jvm/深入理解 Java 虚拟机.html">
+        <li class="chapter " data-level="1.2.1" data-path="../../java/jvm/深入理解 Java 虚拟机.md">
             
-                <a href="../../java/jvm/深入理解 Java 虚拟机.html">
+                <span>
             
                     
                     JVM
@@ -344,9 +344,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../../hbase/co-processor.html">
+        <li class="chapter " data-level="1.4.4" data-path="../../hbase/co-processor.md">
             
-                <a href="../../hbase/co-processor.html">
+                <span>
             
                     
                     协处理器
@@ -357,9 +357,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../../hbase/monitoring.html">
+        <li class="chapter " data-level="1.4.5" data-path="../../hbase/monitoring.md">
             
-                <a href="../../hbase/monitoring.html">
+                <span>
             
                     
                     监控
@@ -370,9 +370,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../../hbase/backup.html">
+        <li class="chapter " data-level="1.4.6" data-path="../../hbase/backup.md">
             
-                <a href="../../hbase/backup.html">
+                <span>
             
                     
                     容灾与备份
@@ -383,9 +383,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" data-path="../../hbase/phoenix.html">
+        <li class="chapter " data-level="1.4.7" data-path="../../hbase/phoenix.md">
             
-                <a href="../../hbase/phoenix.html">
+                <span>
             
                     
                     Phoenix：SQL 中间层
@@ -467,19 +467,19 @@
 <hr>
 <h3 id="&#x6211;&#x60F3;&#x65B0;&#x5EFA;&#x4E00;&#x5F20;&#x8868;"><a name="&#x6211;&#x60F3;&#x65B0;&#x5EFA;&#x4E00;&#x5F20;&#x8868;" class="plugin-anchor" href="#&#x6211;&#x60F3;&#x65B0;&#x5EFA;&#x4E00;&#x5F20;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x6211;&#x60F3;&#x65B0;&#x5EFA;&#x4E00;&#x5F20;&#x8868;</strong></h3>
 <p><strong>&gt; &#x5EFA;&#x8868;&#x8BED;&#x53E5;&#x53C2;&#x8003;</strong></p>
-<pre class="language-"><code class="lang-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>table_name<span class="token punctuation">`</span> <span class="token punctuation">(</span>
-  <span class="token punctuation">`</span>id<span class="token punctuation">`</span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;&#x4E3B;&#x952E;&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>column_name1<span class="token punctuation">`</span> <span class="token keyword">TINYINT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;tinyint &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>column_name2<span class="token punctuation">`</span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;int &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>column_name3<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">&apos;&apos;</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;varchar &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>column_name4<span class="token punctuation">`</span> <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0.00</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;decimal &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>column_name5<span class="token punctuation">`</span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;datetime &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>is_deleted<span class="token punctuation">`</span> <span class="token keyword">TINYINT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;&#x903B;&#x8F91;&#x5220;&#x9664; (1&#xFF1A;&#x5DF2;&#x5220;&#xFF0C;0&#xFF1A;&#x672A;&#x5220;)&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>gmt_create<span class="token punctuation">`</span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&apos;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">`</span>gmt_modified<span class="token punctuation">`</span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&apos;</span><span class="token punctuation">,</span>
-  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">UNIQUE</span> <span class="token keyword">KEY</span> <span class="token punctuation">`</span>uk_column_name<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>column_name<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token keyword">KEY</span> <span class="token punctuation">`</span>idx_column_name<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>column_name<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token identifier"><span class="token punctuation">`</span>table_name<span class="token punctuation">`</span></span> <span class="token punctuation">(</span>
+  <span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;&#x4E3B;&#x952E;&apos;</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>column_name1<span class="token punctuation">`</span></span> <span class="token keyword">TINYINT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;tinyint &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>column_name2<span class="token punctuation">`</span></span> <span class="token keyword">INT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;int &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>column_name3<span class="token punctuation">`</span></span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">&apos;&apos;</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;varchar &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>column_name4<span class="token punctuation">`</span></span> <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0.00</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;decimal &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>column_name5<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;datetime &#x793A;&#x4F8B;&apos;</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>is_deleted<span class="token punctuation">`</span></span> <span class="token keyword">TINYINT</span> <span class="token keyword">UNSIGNED</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;&#x903B;&#x8F91;&#x5220;&#x9664; (1&#xFF1A;&#x5DF2;&#x5220;&#xFF0C;0&#xFF1A;&#x672A;&#x5220;)&apos;</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>gmt_create<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;&#x521B;&#x5EFA;&#x65F6;&#x95F4;&apos;</span><span class="token punctuation">,</span>
+  <span class="token identifier"><span class="token punctuation">`</span>gmt_modified<span class="token punctuation">`</span></span> <span class="token keyword">DATETIME</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">COMMENT</span> <span class="token string">&apos;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&apos;</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>id<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">UNIQUE</span> <span class="token keyword">KEY</span> <span class="token identifier"><span class="token punctuation">`</span>uk_column_name<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>column_name<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">KEY</span> <span class="token identifier"><span class="token punctuation">`</span>idx_column_name<span class="token punctuation">`</span></span> <span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>column_name<span class="token punctuation">`</span></span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8mb4 <span class="token keyword">COMMENT</span><span class="token operator">=</span><span class="token string">&apos;&#x8868;&#x5907;&#x6CE8;&apos;</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>&gt; &#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E8B;&#x9879;</strong></p>
@@ -511,8 +511,8 @@
 <hr>
 <h3 id="&#x6211;&#x9700;&#x8981;&#x4E3A;&#x8868;&#x5EFA;&#x7ACB;&#x6216;&#x5220;&#x9664;&#x7D22;&#x5F15;"><a name="&#x6211;&#x9700;&#x8981;&#x4E3A;&#x8868;&#x5EFA;&#x7ACB;&#x6216;&#x5220;&#x9664;&#x7D22;&#x5F15;" class="plugin-anchor" href="#&#x6211;&#x9700;&#x8981;&#x4E3A;&#x8868;&#x5EFA;&#x7ACB;&#x6216;&#x5220;&#x9664;&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x6211;&#x9700;&#x8981;&#x4E3A;&#x8868;&#x5EFA;&#x7ACB;&#x6216;&#x5220;&#x9664;&#x7D22;&#x5F15;</strong></h3>
 <p><strong>&gt; &#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x8BED;&#x53E5;&#x53C2;&#x8003;</strong></p>
-<pre class="language-"><code class="lang-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> table_name <span class="token keyword">ADD</span> <span class="token keyword">INDEX</span> idx_column1_column2<span class="token punctuation">(</span><span class="token punctuation">`</span>column1<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>column2<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> table_name <span class="token keyword">ADD</span> <span class="token keyword">UNIQUE</span> uk_column1_column2<span class="token punctuation">(</span><span class="token punctuation">`</span>column1<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>column2<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> table_name <span class="token keyword">ADD</span> <span class="token keyword">INDEX</span> idx_column1_column2<span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>column1<span class="token punctuation">`</span></span><span class="token punctuation">,</span><span class="token identifier"><span class="token punctuation">`</span>column2<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> table_name <span class="token keyword">ADD</span> <span class="token keyword">UNIQUE</span> uk_column1_column2<span class="token punctuation">(</span><span class="token identifier"><span class="token punctuation">`</span>column1<span class="token punctuation">`</span></span><span class="token punctuation">,</span><span class="token identifier"><span class="token punctuation">`</span>column2<span class="token punctuation">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>&gt; &#x5220;&#x9664;&#x7D22;&#x5F15;&#x8BED;&#x53E5;&#x53C2;&#x8003;</strong></p>
 <pre class="language-"><code class="lang-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> table_name <span class="token keyword">DROP</span> <span class="token keyword">INDEX</span> idx_xxx<span class="token punctuation">;</span>
@@ -547,7 +547,7 @@
 <li>&#x53C2;&#x8003;&#xFF1A;<a href="standard-v1.0.html#&#x5F00;&#x53D1;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EC0;&#x4E48;&#xFF1F;">&#x5F00;&#x53D1;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4EC0;&#x4E48;&#xFF1F;</a></li>
 </ul>
 <footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-05-13 22:33:07
+2023-04-03 14:53:25
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -604,7 +604,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"快速指引","level":"1.3.1.1","depth":3,"next":{"title":"基本规范","level":"1.3.1.2","depth":3,"path":"markdown/mysql/standard/standard-v1.0.md","ref":"markdown/mysql/standard/standard-v1.0.md","articles":[]},"previous":{"title":"开发规范","level":"1.3.1","depth":2,"ref":"","articles":[{"title":"快速指引","level":"1.3.1.1","depth":3,"path":"markdown/mysql/standard/guide.md","ref":"markdown/mysql/standard/guide.md","articles":[]},{"title":"基本规范","level":"1.3.1.2","depth":3,"path":"markdown/mysql/standard/standard-v1.0.md","ref":"markdown/mysql/standard/standard-v1.0.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","search-pro","-highlight","prism","prism-themes","github","copy-code-button","splitter","-sharing","tbfed-pagefooter","anchors","simple-page-toc","hide-element","sectionx","back-to-top-button","page-toc-button","cuav-chapters","heading-anchors","fancybox","popup","multipart","book-summary-scroll-position-saver","todo","url-embed","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"],"lang":{"shell":"bash"}},"fancybox":{"helpers":{"buttons":{}}},"github":{"url":"https://github.com/zerolee1993"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"sytles":{"theme":"night","css":"sytles/website.css"},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"popup":{},"multipart":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"night","family":"sans","size":1},"sectionx":{"tag":"b"},"heading-anchors":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"prism-themes":{},"copy-code-button":{},"url-embed":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zerolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"极客时间付费专栏备份","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"极客时间付费专栏备份"},"file":{"path":"markdown/mysql/standard/guide.md","mtime":"2019-05-13T14:33:07.022Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T11:45:36.346Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"快速指引","level":"1.3.1.1","depth":3,"next":{"title":"基本规范","level":"1.3.1.2","depth":3,"path":"markdown/mysql/standard/standard-v1.0.md","ref":"markdown/mysql/standard/standard-v1.0.md","articles":[]},"previous":{"title":"开发规范","level":"1.3.1","depth":2,"ref":"","articles":[{"title":"快速指引","level":"1.3.1.1","depth":3,"path":"markdown/mysql/standard/guide.md","ref":"markdown/mysql/standard/guide.md","articles":[]},{"title":"基本规范","level":"1.3.1.2","depth":3,"path":"markdown/mysql/standard/standard-v1.0.md","ref":"markdown/mysql/standard/standard-v1.0.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","search-pro","-highlight","prism","prism-themes","github","copy-code-button","splitter","-sharing","tbfed-pagefooter","anchors","simple-page-toc","hide-element","sectionx","back-to-top-button","page-toc-button","cuav-chapters","heading-anchors","fancybox","popup","multipart","book-summary-scroll-position-saver","todo","url-embed","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-okaidia.css"],"lang":{"shell":"bash"}},"fancybox":{"helpers":{"buttons":{}}},"github":{"url":"https://github.com/zerolee1993"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"book-summary-scroll-position-saver":{},"splitter":{},"search-pro":{},"sytles":{"theme":"night","css":"sytles/website.css"},"cuav-chapters":{"summaryMaxSize":20,"useLimitExpanded":false},"popup":{},"multipart":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"night","family":"sans","size":1},"sectionx":{"tag":"b"},"heading-anchors":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"prism-themes":{},"copy-code-button":{},"url-embed":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zerolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Zero 的私人笔记","language":"zh-hans","output.name":"site","gitbook":"3.2.3","description":"Zero 的私人笔记"},"file":{"path":"markdown/mysql/standard/guide.md","mtime":"2023-04-03T06:53:25.115Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-03T07:16:10.894Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
